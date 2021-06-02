@@ -1,0 +1,22 @@
+{
+  "restartable": "rs",
+  "watch": [
+    "./**/*.{scss}",
+    "./gulpfile.js"
+  ],
+  "ignore": [
+    ".git",
+    ".svn",
+    "node_modules/**/node_modules",
+    "miniprogram_npm",
+    "logs/*",
+    ".vscode",
+    ".idea",
+    ".log"
+  ],
+  "verbose": true,
+  "exec": "gulp build",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

@@ -2,7 +2,7 @@
  * @Author: jdeseva
  * @Date: 2021-06-02 11:30:07
  * @LastEditors: jdeseva
- * @LastEditTime: 2021-06-03 11:32:05
+ * @LastEditTime: 2021-06-03 16:29:31
  * @Description:
  */
 const { series, src, dest } = require('gulp')
@@ -10,6 +10,9 @@ const sass = require('gulp-sass')
 const replace = require('gulp-replace')
 const rename = require('gulp-rename')
 const uglify = require('gulp-uglify')
+const stripDebug = require('gulp-strip-debug')
+const babel = require('gulp-babel')
+const gulpIf = require('gulp-if')
 
 const config = require('./build/config')
 
@@ -95,7 +98,9 @@ function copyJsByUglify() {
     '!./gulpfile.js',
     '!**/build{,/**}',
   ])
-    .pipe(uglify()) // 压缩js
+    .pipe(gulpIf(!config.isDebug, babel({ presets: ['@babel/env'] })))
+    .pipe(gulpIf(!config.isDebug, stripDebug()))
+    .pipe(gulpIf(config.isZip, uglify()))
     .pipe(dest('./dist'))
 }
 

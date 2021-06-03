@@ -12,7 +12,7 @@
 ```
 .
 ├── build        项目配置文件
-├── scr          开发模式小程序目录
+├── src          开发模式小程序目录
 ├── node_modules node依赖包
 ├── dist         生产环境小程序目录
 ├── package.json 项目配置

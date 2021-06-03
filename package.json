@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
-    "build": "rimraf ./dist && set NODE_ENV=production&& gulp build"
+    "build": "rimraf ./dist && set NODE_ENV=production&& gulp build",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
@@ -21,6 +22,8 @@
     "gulp-sass": "^4.1.0",
     "gulp-strip-debug": "^4.0.0",
     "gulp-uglify": "^3.0.2",
+    "jest": "^27.0.4",
+    "miniprogram-automator": "^0.10.0",
     "nodemon": "^2.0.7"
   },
   "dependencies": {

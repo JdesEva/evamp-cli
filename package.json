@@ -1,15 +1,25 @@
 {
-  "name": "gulp_wxmini",
+  "name": "evamp-cli",
   "version": "0.0.1",
-  "description": "gulp",
-  "main": "gulpfile.js",
-  "repository": "",
+  "description": "gulp 小程序CLI",
+  "repository": "git@github.com:JdesEva/evamp-cli.git",
   "author": "jdeseva <zjmqydes@163.com>",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
     "build": "rimraf ./dist && set NODE_ENV=production&& gulp build",
-    "test": "jest"
+    "test": "jest",
+    "open": "node ./cli/bin/index.js new yui"
+  },
+  "bin": {
+    "evamp": "./cli/bin/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/JdesEva/evamp-cli/issues"
+  },
+  "homepage": "https://github.com/JdesEva/evamp-cli#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/evamp-cli"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
@@ -28,6 +38,11 @@
   },
   "dependencies": {
     "@vant/weapp": "^1.6.8",
-    "axios-for-mpweixin": "^1.0.5"
+    "axios-for-mpweixin": "^1.0.5",
+    "chalk": "^4.1.1",
+    "inquirer": "^8.1.0",
+    "ora": "^5.4.0",
+    "template_js": "^2.4.0",
+    "yargs": "^17.0.1"
   }
 }

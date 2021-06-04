@@ -1,6 +1,6 @@
-# gulp_wxmini gulp 小程序工作流
+# evamp-cli gulp 小程序 CLI
 
-> 基于 gulp 的小程序工作流
+> 基于 gulp 的小程序工作流 CLI
 
 ## 功能
 
@@ -12,6 +12,7 @@
 ```
 .
 ├── build        项目配置文件
+├── cli          CLI文件
 ├── src          开发模式小程序目录
 ├── tests        自动化测试目录
 ├── node_modules node依赖包
@@ -46,6 +47,14 @@
 
 > !
 > 以上配置的目的是为了开发、生产模式小程序都可以直接依赖根目录的 node_modules，同时小程序目录中不会出现额外的文件、文件夹，代码上传也无需做额外操作。
+
+## 安装
+
+```shell
+npm i evamp-cli -g # 全局安装 CLI
+
+evamp new project # 创建项目
+```
 
 ## 使用
 

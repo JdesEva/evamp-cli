@@ -1,9 +1,8 @@
 {
   "name": "evamp-cli",
   "version": "0.0.1",
-  "description": "gulp",
-  "main": "./cli/index.js",
-  "repository": "",
+  "description": "gulp 小程序CLI",
+  "repository": "git@github.com:JdesEva/evamp-cli.git",
   "author": "jdeseva <zjmqydes@163.com>",
   "license": "MIT",
   "scripts": {

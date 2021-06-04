@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/JdesEva/evamp-cli#readme",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/evamp-cli"
+    "registry": "https://www.npmjs.com/package/evamp-cli"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",

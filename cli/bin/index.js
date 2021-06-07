@@ -21,6 +21,7 @@ yargs
       return Yargs.option('force', { alias: 'f', describe: '强制新建' })
         .option('pname', { alias: 'n', describe: '项目名称' })
         .option('username', { alias: 'n', describe: '作者' })
+        .option('manager', { alias: 'm', describe: '选择仓库包管理方式' })
     },
     function (argv) {
       runInitPrompts(argv._[1], yargs.argv).then(function (answers) {

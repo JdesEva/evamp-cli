@@ -8,12 +8,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
-    "build": "rimraf ./dist && set NODE_ENV=production&& gulp build",
+    "build": "rimraf ./dist && cross-env NODE_ENV=production gulp build",
     "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
+    "cross-env": "^7.0.3",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-if": "^3.0.0",

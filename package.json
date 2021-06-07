@@ -1,15 +1,14 @@
 {
   "name": "evamp-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "gulp 小程序CLI",
   "repository": "git@github.com:JdesEva/evamp-cli.git",
   "author": "jdeseva <zjmqydes@163.com>",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
-    "build": "rimraf ./dist && set NODE_ENV=production&& gulp build",
-    "test": "jest",
-    "open": "node ./cli/bin/index.js new yui"
+    "build": "rimraf ./dist && cross-env NODE_ENV=production gulp build",
+    "test": "jest"
   },
   "bin": {
     "evamp": "./cli/bin/index.js"
@@ -24,6 +23,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
+    "cross-env": "^7.0.3",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-if": "^3.0.0",

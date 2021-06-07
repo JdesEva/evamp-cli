@@ -2,7 +2,7 @@
  * @Author: jdeseva
  * @Date: 2021-06-04 14:12:16
  * @LastEditors: jdeseva
- * @LastEditTime: 2021-06-04 16:28:17
+ * @LastEditTime: 2021-06-07 09:20:36
  * @Description: CLI
  */
 
@@ -10,9 +10,11 @@ const ora = require('ora')
 const path = require('path')
 const spinner = ora()
 const { copyTmpl, copyFileByGuard } = require('./util')
+const { Install } = require('./bin/install')
 
 function init(cmdPath, option) {
-  const { pathname, name, pname, username, version } = option
+
+  const { name } = option
 
   // 处理模板文件
   const tempList = [
@@ -42,7 +44,9 @@ function init(cmdPath, option) {
     )
   })
 
-  spinner.succeed('evamp create project successfully')
+  Install(cmdPath, name, option).then(() => {
+    spinner.succeed('evamp create project successfully')
+  })
 }
 
 exports.init = init

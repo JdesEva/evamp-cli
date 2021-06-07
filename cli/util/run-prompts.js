@@ -2,8 +2,8 @@
  * @Author: jdeseva
  * @Date: 2021-06-04 14:01:57
  * @LastEditors: jdeseva
- * @LastEditTime: 2021-06-04 14:24:11
- * @Description:
+ * @LastEditTime: 2021-06-07 09:19:39
+ * @Description: 安装选项
  */
 const inquirer = require('inquirer')
 
@@ -18,7 +18,7 @@ function prompts(promptList) {
 let promptList = []
 
 function runInitPrompts(pathname, argv) {
-  const { pname, username } = argv
+  const { pname, username, manager } = argv
 
   promptList.push({
     type: 'input',
@@ -54,6 +54,21 @@ function runInitPrompts(pathname, argv) {
           return 'Please enter name'
         }
         return true
+      },
+    })
+  }
+  if (!manager) {
+    promptList.push({
+      type: 'list',
+      message: 'package manager:',
+      name: 'manager',
+      choices: ['no install', 'npm', 'yarn'],
+      filter: function (value) {
+        return {
+          npm: 'npm',
+          yarn: 'yarn',
+          'no install': null,
+        }[value]
       },
     })
   }

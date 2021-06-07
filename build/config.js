@@ -2,7 +2,7 @@
  * @Author: jdeseva
  * @Date: 2021-06-02 11:36:51
  * @LastEditors: jdeseva
- * @LastEditTime: 2021-06-03 16:30:39
+ * @LastEditTime: 2021-06-07 09:27:13
  * @Description: 配置文件
  */
 module.exports = {

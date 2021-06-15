@@ -2,7 +2,7 @@
  * @Author: jdeseva
  * @Date: 2021-06-04 14:12:16
  * @LastEditors: jdeseva
- * @LastEditTime: 2021-06-07 09:20:36
+ * @LastEditTime: 2021-06-15 14:39:16
  * @Description: CLI
  */
 
@@ -20,7 +20,7 @@ function init(cmdPath, option) {
   const tempList = [
     { from: './template/gitignore.tmpl', to: '.gitignore' },
     { from: './template/package.json.tmpl', to: 'package.json' },
-    { from: './template/gulpfile.js.tmpl', to: 'gulpfile.js' },
+    { from: './template/gulpfile.js', to: 'gulpfile.js' },
     { from: './template/nodemon.json.tmpl', to: 'nodemon.json' },
     { from: './template/prettierrc.json.tmpl', to: '.prettierrc.json' },
     { from: './template/README.md.tmpl', to: 'README.md' },

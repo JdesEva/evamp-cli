@@ -1,9 +1,16 @@
-const { axios } = require('axios-for-mpweixin')
+/*
+ * @Author: jdeseva
+ * @Date: 2021-06-03 08:59:20
+ * @LastEditors: jdeseva
+ * @LastEditTime: 2021-06-15 17:27:00
+ * @Description: app.js
+ */
+const Api = require('./api/api')
 
 //app.js
 App({
   onLaunch: function () {
-    wx.axios = axios()
+    wx.api = Api
     wx.Toast = function (message, callback = null) {
       wx.showToast({
         title: message,

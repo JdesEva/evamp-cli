@@ -1,16 +1,20 @@
+/*
+ * @Author: jdeseva
+ * @Date: 2021-06-03 08:59:20
+ * @LastEditors: jdeseva
+ * @LastEditTime: 2021-06-15 17:49:06
+ * @Description:
+ */
 // pages/home/index.js
 Page({
-
   /**
    * 页面的初始数据
    */
-  data: {
-
-  },
+  data: {},
 
   getImage() {
-    wx.axios.get('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F34ca04b442580fe9ace8e9b8febd93d4ccecdb26.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625226030&t=fd7b243ed54200c182ea63a95d2aacf3').then(res => {
-      console.log(res)
+    wx.api.getList().then(({ data }) => {
+      console.log(data)
     })
   },
 
@@ -24,49 +28,35 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
+  onReady: function () {},
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
+  onShow: function () {},
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
+  onHide: function () {},
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
+  onUnload: function () {},
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
-  },
+  onPullDownRefresh: function () {},
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
-  },
+  onReachBottom: function () {},
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function () {},
 })

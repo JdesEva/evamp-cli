@@ -1,6 +1,6 @@
 {
   "name": "evamp-cli",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "gulp 小程序CLI",
   "repository": "git@github.com:JdesEva/evamp-cli.git",
   "author": "jdeseva <zjmqydes@163.com>",
@@ -17,9 +17,6 @@
     "url": "https://github.com/JdesEva/evamp-cli/issues"
   },
   "homepage": "https://github.com/JdesEva/evamp-cli#readme",
-  "publishConfig": {
-    "registry": "https://www.npmjs.com/package/"
-  },
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",

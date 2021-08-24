@@ -5,6 +5,7 @@ const yargs = require('yargs')
 const { log } = require('../util')
 const { runInitPrompts } = require('../util/run-prompts')
 const { init } = require('./init')
+const { getTemplate, saveTemplate } = require('../util/template')
 
 log()
 
@@ -25,10 +26,17 @@ yargs
     },
     function (argv) {
       runInitPrompts(argv._[1], yargs.argv).then(function (answers) {
+        console.log(7777777777777, JSON.stringify(argv), JSON.stringify(yargs), JSON.stringify(answers))
         init(argv, answers)
       })
     }
   )
+  .command(['add'], '新增一个模板', Function.prototype, function (argv) {
+    saveTemplate({ registry: argv._[1], url: argv._[2] })
+  })
+  .command(['list'], '查看所有模板',Function.prototype, function (argv) {
+    getTemplate()
+  })
   .demandCommand()
   .help('info')
   .epilog('copyright 2021-2022').argv

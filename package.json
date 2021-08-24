@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "nodemon",
     "build": "rimraf ./dist && cross-env NODE_ENV=production gulp build",
-    "test": "jest"
+    "test": "jest",
+    "new": "node ./cli/bin/index.js"
   },
   "bin": {
     "evamp": "./cli/bin/index.js"
@@ -37,6 +38,7 @@
     "@vant/weapp": "^1.6.8",
     "axios-for-mpweixin": "^1.0.5",
     "chalk": "^4.1.1",
+    "compressing": "^1.5.1",
     "inquirer": "^8.1.0",
     "ora": "^5.4.0",
     "template_js": "^2.4.0",

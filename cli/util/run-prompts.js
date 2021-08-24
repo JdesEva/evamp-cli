@@ -2,7 +2,7 @@
  * @Author: jdeseva
  * @Date: 2021-06-04 14:01:57
  * @LastEditors: jdeseva
- * @LastEditTime: 2021-06-07 09:19:39
+ * @LastEditTime: 2021-08-24 16:05:24
  * @Description: 安装选项
  */
 const inquirer = require('inquirer')
@@ -18,7 +18,11 @@ function prompts(promptList) {
 let promptList = []
 
 function runInitPrompts(pathname, argv) {
-  const { pname, username, manager } = argv
+
+
+  const { pname, username, manager, template = 'default' } = argv
+
+  // console.log(111, pathname, template)
 
   promptList.push({
     type: 'input',

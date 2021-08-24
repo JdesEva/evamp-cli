@@ -2,51 +2,38 @@
  * @Author: jdeseva
  * @Date: 2021-06-04 14:12:16
  * @LastEditors: jdeseva
- * @LastEditTime: 2021-06-15 14:39:16
+ * @LastEditTime: 2021-08-24 19:03:10
  * @Description: CLI
  */
 
 const ora = require('ora')
 const path = require('path')
 const spinner = ora()
-const { copyTmpl, copyFileByGuard } = require('./util')
+const { mkdirSyncGuard } = require('./util')
 const { Install } = require('./bin/install')
+const { tgz } = require('compressing')
 
 function init(cmdPath, option) {
+  console.log(111, cmdPath, JSON.stringify(option))
 
-  const { name } = option
+  const { name, pathname, manager, template } = option
 
-  // 处理模板文件
-  const tempList = [
-    { from: './template/gitignore.tmpl', to: '.gitignore' },
-    { from: './template/package.json.tmpl', to: 'package.json' },
-    { from: './template/gulpfile.js', to: 'gulpfile.js' },
-    { from: './template/nodemon.json.tmpl', to: 'nodemon.json' },
-    { from: './template/prettierrc.json.tmpl', to: '.prettierrc.json' },
-    { from: './template/README.md.tmpl', to: 'README.md' },
-  ]
+  mkdirSyncGuard(path.resolve(cmdPath, pathname))
 
-  tempList.forEach(({ from, to }) => {
-    copyTmpl(
-      path.resolve(__dirname, from),
-      path.resolve(cmdPath, name, to),
-      option
+  tgz
+    .uncompress(
+      path.resolve(__dirname, `./template/${template}.tgz`),
+      path.resolve(cmdPath, pathname)
     )
-  })
-
-  // 处理文件夹
-  const dirList = ['build', 'src', 'tests']
-
-  dirList.forEach((p) => {
-    copyFileByGuard(
-      path.resolve(__dirname, '..', p),
-      path.resolve(cmdPath, name, p)
-    )
-  })
-
-  Install(cmdPath, name, option).then(() => {
-    spinner.succeed('evamp create project successfully')
-  })
+    .then(() => {
+      console.log('success')
+      Install(cmdPath, name, option).then(() => {
+        spinner.succeed('evamp create project successfully')
+      })
+    })
+    .catch((err) => {
+      console.error(err)
+    })
 }
 
 exports.init = init

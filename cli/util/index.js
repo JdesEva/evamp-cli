@@ -2,7 +2,7 @@
  * @Author: jdeseva
  * @Date: 2021-06-04 11:40:47
  * @LastEditors: jdeseva
- * @LastEditTime: 2021-06-04 16:16:37
+ * @LastEditTime: 2021-08-24 18:48:19
  * @Description:
  */
 const fs = require('fs')
@@ -139,7 +139,6 @@ function copyFileByGuard(from, to) {
  * @param {string} to 目标
  */
 function copyFileByStream(from, to) {
-  console.log(111, from, to)
   const readStream = fs.createReadStream(from)
   const writeStream = fs.createWriteStream(to)
   readStream.pipe(writeStream)

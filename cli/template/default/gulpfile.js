@@ -1,10 +1,3 @@
-/*
- * @Author: jdeseva
- * @Date: 2021-06-02 11:30:07
- * @LastEditors: jdeseva
- * @LastEditTime: 2021-06-03 16:29:31
- * @Description:
- */
 const { series, src, dest } = require('gulp')
 const sass = require('gulp-sass')
 const replace = require('gulp-replace')

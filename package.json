@@ -1,15 +1,12 @@
 {
   "name": "evamp-cli",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "gulp 小程序CLI",
   "repository": "git@github.com:JdesEva/evamp-cli.git",
   "author": "jdeseva <zjmqydes@163.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon",
-    "build": "rimraf ./dist && cross-env NODE_ENV=production gulp build",
-    "test": "jest",
-    "new": "node ./cli/bin/index.js"
+    "dev": "node ./cli/bin/index.js"
   },
   "bin": {
     "evamp": "./cli/bin/index.js"

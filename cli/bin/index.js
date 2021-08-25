@@ -26,7 +26,6 @@ yargs
     },
     function (argv) {
       runInitPrompts(argv._[1], yargs.argv).then(function (answers) {
-        console.log(7777777777777, JSON.stringify(argv), JSON.stringify(yargs), JSON.stringify(answers))
         init(argv, answers)
       })
     }

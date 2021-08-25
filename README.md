@@ -54,10 +54,26 @@
 ```shell
 npm i evamp-cli -g # 全局安装 CLI
 
-evamp new project # 创建项目
+evamp new <projectName> # 创建项目
 ```
 
 ## 使用
+
+- 使用模板（**必须使用 `.tgz`**格式的模板资源包）
+
+```shell
+# 添加小程序模板
+evamp add <templateName> <templateURL> # 只支持 .tgz 格式的资源包
+
+# 查看所有模板
+
+evamp list
+
+# 使用模板
+
+evamp new <projectName> --template=<templateName>
+
+```
 
 - 开发模式
 

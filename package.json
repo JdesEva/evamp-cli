@@ -1,14 +1,12 @@
 {
   "name": "evamp-cli",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "gulp 小程序CLI",
   "repository": "git@github.com:JdesEva/evamp-cli.git",
   "author": "jdeseva <zjmqydes@163.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon",
-    "build": "rimraf ./dist && cross-env NODE_ENV=production gulp build",
-    "test": "jest"
+    "dev": "node ./cli/bin/index.js"
   },
   "bin": {
     "evamp": "./cli/bin/index.js"
@@ -37,8 +35,10 @@
     "@vant/weapp": "^1.6.8",
     "axios-for-mpweixin": "^1.0.5",
     "chalk": "^4.1.1",
+    "compressing": "^1.5.1",
     "inquirer": "^8.1.0",
     "ora": "^5.4.0",
+    "request": "^2.88.2",
     "template_js": "^2.4.0",
     "yargs": "^17.0.1"
   }

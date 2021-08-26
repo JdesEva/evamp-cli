@@ -2,7 +2,7 @@
  * @Author: jdeseva
  * @Date: 2021-06-04 14:07:17
  * @LastEditors: jdeseva
- * @LastEditTime: 2021-06-07 09:16:58
+ * @LastEditTime: 2021-08-24 16:59:48
  * @Description: Init
  */
 
@@ -14,7 +14,7 @@ const cli = require('../index')
 
 function init(argv, answers) {
   const cmdPath = process.cwd()
-  const { name, pname, username, manager } = Object.assign({}, argv, answers)
+  const { name, pname, username, manager, template = 'default' } = Object.assign({}, argv, answers)
   const pathname = String(typeof argv._[1] !== 'undefined' ? argv._[1] : name)
   const options = {
     pathname,
@@ -23,6 +23,7 @@ function init(argv, answers) {
     pname: String(pname), // npm package name
     username: String(username), // author
     version: String(pkg.version),
+    template
   }
 
   // 运行命令

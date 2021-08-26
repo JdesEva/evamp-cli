@@ -1,6 +1,6 @@
 {
   "name": "evamp-cli",
-  "version": "0.3.0",
+  "version": "0.2.1",
   "description": "gulp 小程序CLI",
   "repository": "git@github.com:JdesEva/evamp-cli.git",
   "author": "jdeseva <zjmqydes@163.com>",
@@ -38,6 +38,7 @@
     "compressing": "^1.5.1",
     "inquirer": "^8.1.0",
     "ora": "^5.4.0",
+    "request": "^2.88.2",
     "template_js": "^2.4.0",
     "yargs": "^17.0.1"
   }

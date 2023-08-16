@@ -38,4 +38,4 @@ yargs
   })
   .demandCommand()
   .help('info')
-  .epilog('copyright 2021-2022').argv
+  .epilog(`copyright 2021-${new Date().getFullYear()}`).argv

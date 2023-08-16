@@ -1,0 +1,25 @@
+{
+  "name": "<%=pname>",
+  "version": "<%=version>",
+  "description": "<%=description>",
+  "scripts": {
+    "lint": "eslint . --fix",
+    "lint:style": "stylelint miniprogram/**/*.{css,less,scss} --fix"
+  },
+  "author": "<%=author>",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "lint-staged": "^14.0.0",
+    "miniprogram-api-typings": "^2.8.3-1",
+    "prettier": "^3.0.2",
+    "stylelint": "^15.10.2",
+    "stylelint-config-recess-order": "^4.3.0",
+    "stylelint-config-standard-scss": "^10.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  }
+}

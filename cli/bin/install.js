@@ -1,10 +1,3 @@
-/*
- * @Author: jdeseva
- * @Date: 2021-06-07 09:01:00
- * @LastEditors: jdeseva
- * @LastEditTime: 2021-06-07 09:21:24
- * @Description: Install
- */
 const path = require('path')
 const ora = require('ora')
 const { exec } = require('child_process')

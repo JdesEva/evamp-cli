@@ -1,10 +1,3 @@
-/*
- * @Author: jdeseva
- * @Date: 2021-06-04 11:40:47
- * @LastEditors: jdeseva
- * @LastEditTime: 2021-08-24 18:48:19
- * @Description:
- */
 const fs = require('fs')
 const path = require('path')
 const chalk = require('chalk')
@@ -34,12 +27,12 @@ function mkdirSyncGuard(target) {
  * 日志输出
  */
 function log() {
-  const red = chalk.bold.red
-  const green = chalk.bold.green
-  const blue = chalk.bold.blue
+  const red = chalk.red
+  const green = chalk.greenBright
+  const blue = chalk.blue
 
   const error = console.error
-  const log = console.error
+  const log = console.log
   const info = console.info
 
   console.error = function () {
@@ -113,9 +106,9 @@ function isTemplate(pathname) {
 function copyFileByGuard(from, to) {
   mkdirSyncGuard(to) // 检查一下目录是否存在 不存在则直接创建 存在则跳过
 
-  const sourceList = fs.readdirSync(from)
-
-  sourceList.forEach((p) => {
+  const paths = fs.readdirSync(from)
+  
+  paths.forEach((p) => {
     const sourceDest = path.resolve(from, p)
     const toDest = path.resolve(to, p)
     fs.stat(sourceDest, (err, stats) => {

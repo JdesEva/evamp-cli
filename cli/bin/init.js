@@ -1,11 +1,3 @@
-/*
- * @Author: jdeseva
- * @Date: 2021-06-04 14:07:17
- * @LastEditors: jdeseva
- * @LastEditTime: 2021-08-24 16:59:48
- * @Description: Init
- */
-
 const fs = require('fs')
 const path = require('path')
 
